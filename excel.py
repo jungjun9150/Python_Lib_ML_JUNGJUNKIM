@@ -12,11 +12,11 @@ from pandas import ExcelFile
 from openpyxl import load_workbook
 from numpy import genfromtxt
 
-file_name = '/home/jungjunkim/Python_Library_Machine_Learning/dataset.csv'
+file_name = '/home/jungjunkim/Python_Library_Machine_Learning/Dataset/dataset.csv'
 csv = pd.read_csv(file_name)
 Length = csv.shape[0]
 csv_array=np.loadtxt(csv[1])
-print(csv_array)
+print(csv)
 
 
 
