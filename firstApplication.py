@@ -47,5 +47,5 @@ y_real=knn.predict(Input_train)
 y_pred=knn.predict(Input_test)
 print("real:{}\n".format(output_test))
 print("pred:{}\n".format(y_pred))
-print("Test_Set correction degree: {:.2f}".format(np.mean(output_test == y_pred)))
+print("Test_Set Correction Degree: {:.2f}".format(np.mean(output_test == y_pred)))
 
