@@ -14,4 +14,12 @@ from numpy import genfromtxt
 
 file_name = '/home/jungjunkim/Python_Library_Machine_Learning/dataset.csv'
 csv = pd.read_csv(file_name)
-print(csv.values.shape)
+Length = csv.shape[0]
+csv_array=np.loadtxt(csv[1])
+print(csv_array)
+
+
+
+#for i in range(0,Length[0]):
+# data=np.array([[csv.temp[i],csv.wspeed[i],csv.wway[i],csv.humi[i],csv.hpa[i]]])
+
