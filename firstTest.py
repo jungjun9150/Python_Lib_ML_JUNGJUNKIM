@@ -27,10 +27,10 @@ X_train, X_test, y_train, y_test = train_test_split(dataset,target,random_state=
 ## Drawing the Scatter matrix plot
 Scatter_plot = pd.DataFrame(X_train,columns=names)
 pd.plotting.scatter_matrix(Scatter_plot,c=y_train,figsize=(15,15),marker='o',hist_kwds={'bins':20},s=60,alpha=.8,cmap=mglearn.cm3)
-#plt.show()
+plt.show()
 
 ## Creating Model by K-Nearest Neighbors
-knn = KNeighborsClassifier(n_neighbors=1)
+knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train,y_train)
 
 ## Predicting the model
