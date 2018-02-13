@@ -47,7 +47,7 @@ clf.fit(X_train,y_train)
 print("testset correction:{:.2f}".format(clf.score(X_test,y_test)))
 """
 
-# example 5 
+# example 5 : accuracy according to n_neighbors ( training, test)
 
 cancer = load_breast_cancer()
 X_train, X_test, y_train, y_test = train_test_split(cancer.data, cancer.target, stratify = cancer.target, random_state=66)
@@ -55,3 +55,21 @@ X_train, X_test, y_train, y_test = train_test_split(cancer.data, cancer.target, 
 training_accuracy = []
 test_accuracy = []
 neighbors_settings = range(1,11)
+
+for n_neighbors in neighbors_settings:
+ # Create Model
+ clf = KNeighborsClassifier(n_neighbors=n_neighbors)
+ clf.fit(X_train,y_train)
+ 
+ # Save the train_accuracy
+ training_accuracy.append(clf.score(X_train,y_train))
+ 
+ # Save the Generalization accuracy
+ test_accuracy.append(clf.score(X_test,y_test))
+
+plt.plot(neighbors_settings, training_accuracy,label="train accuracy")
+plt.plot(neighbors_settings, test_accuracy,label="test accuracy")
+plt.ylabel("accuracy")
+plt.xlabel("n_neighbors")
+plt.legend()
+plt.show()
